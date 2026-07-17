@@ -7,48 +7,48 @@ const sparkles = [
   // Frame 1
   [
     "",
+    "                                                               *Usar pantalla completa*",
     "",
-    "                                                                *Usar pantalla completa*",
     "",
     ""
   ],
   // Frame 2
   [
     "",
+    "                                                               *Usar pantalla completa*",
     "",
-    "                                                                *Usar pantalla completa*",
     "                     .",
     "                    . ."
   ],
   // Frame 3
   [
     "",
+    "                     *                                         *Usar pantalla completa*",
     "",
-    "                     *                                          *Usar pantalla completa*",
     "                    .+. ",
     "                   .'+`."
   ],
   // Frame 4
   [
     "",
-    "                     |",
-    "                   \\ * /                                        *Usar pantalla completa*",
+    "                     |                                         *Usar pantalla completa*",
+    "                   \\ * /",
     "                  -- * --",
     "                   / * \\"
   ],
   // Frame 5
   [
     "                     |",
-    "                  \\  |  /",
-    "                   \\ | /                                        *Usar pantalla completa*",
+    "                  \\  |  /                                      *Usar pantalla completa*",
+    "                   \\ | /",
     "                ---- * ----",
     "                   / | \\"
   ],
   // Frame 6
   [
     "",
-    "                     *",
-    "                    . .                                         *Usar pantalla completa*",
+    "                     *                                         *Usar pantalla completa*",
+    "                    . .",
     "                   .   .",
     "                  .     ."
   ]
@@ -67,7 +67,7 @@ const footerText = `
              Luciano Burgos - Lucas Muñoz - Dylan Santoni - Leonel Funes - Valentín Murcia -
                              Marcos Parrino - Bruno Sanchez - Ernesto Elias
 
-                                      *Usar pantalla completa*   
+                                    *Usar pantalla completa*   
 `.split('\\n');
 
 for (let i = 0; i < sparkles.length; i++) {

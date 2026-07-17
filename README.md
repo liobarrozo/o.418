@@ -49,11 +49,13 @@ La "magia" de esta animación reside en el uso de estándares de red y de termin
    ```bash
    node server.js
    ```
-3. **Para ver la animación**: Abre una nueva terminal y ejecuta:
+3. **Para ver la animación públicamente**: Ejecuta desde cualquier terminal:
    ```bash
-   curl http://localhost:3000
+   curl o-418.top
    ```
-4. **Para ver la Landing Page**: Visita `http://localhost:3000` en cualquier navegador web.
+4. **Para ver la Landing Page**: Visita `http://o-418.top` en cualquier navegador web.
+
+*(Nota: para probar localmente mientras desarrollas, puedes seguir usando `curl http://localhost:3000` y `http://localhost:3000`)*
 
 ---
 

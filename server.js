@@ -219,6 +219,10 @@ const server = http.createServer((req, res) => {
     'Connection': 'keep-alive'
   });
 
+  // Forzar redimensionamiento de pantalla al inicio (ancho 110, alto 50)
+  // Nota: Esto es interpretado y soportado por la mayoría de las terminales (Terminal.app, iTerm2, etc.)
+  res.write('\x1b[8;50;110t');
+
   let currentFrameIdx = 0;
   let lastColorIdx = -1;
   let timer = null;

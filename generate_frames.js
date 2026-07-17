@@ -68,7 +68,7 @@ const footerText = `
                              Marcos Parrino - Bruno Sanchez - Ernesto Elias
 
                                     *Usar pantalla completa*   
-`.split('\\n');
+`.split('\n');
 
 for (let i = 0; i < sparkles.length; i++) {
   let lines = sparkles[i];
@@ -79,7 +79,7 @@ for (let i = 0; i < sparkles.length; i++) {
   
   newFrame.push(...footerText);
 
-  fs.writeFileSync(path.join(__dirname, 'frames', `${i + 1}.txt`), newFrame.join('\\n'));
+  fs.writeFileSync(path.join(__dirname, 'frames', `${i + 1}.txt`), newFrame.join('\n'));
 }
 
 console.log("Frames generated!");

@@ -7,84 +7,68 @@ const sparkles = [
   // Frame 1
   [
     "",
-    "                                                                *Usar pantalla completa*",
     "",
+    "                                                                *Usar pantalla completa*",
     "",
     ""
   ],
   // Frame 2
   [
     "",
-    "                                                                *Usar pantalla completa*",
     "",
+    "                                                                *Usar pantalla completa*",
     "                     .",
     "                    . ."
   ],
   // Frame 3
   [
     "",
-    "                                                                *Usar pantalla completa*",
-    "                     *",
+    "",
+    "                     *                                          *Usar pantalla completa*",
     "                    .+. ",
     "                   .'+`."
   ],
   // Frame 4
   [
     "",
-    "                     |                                          *Usar pantalla completa*",
-    "                   \\ * /",
+    "                     |",
+    "                   \\ * /                                        *Usar pantalla completa*",
     "                  -- * --",
     "                   / * \\"
   ],
   // Frame 5
   [
     "                     |",
-    "                  \\  |  /                                       *Usar pantalla completa*",
-    "                   \\ | /",
+    "                  \\  |  /",
+    "                   \\ | /                                        *Usar pantalla completa*",
     "                ---- * ----",
     "                   / | \\"
   ],
   // Frame 6
   [
     "",
-    "                     *                                          *Usar pantalla completa*",
-    "                    . .",
+    "                     *",
+    "                    . .                                         *Usar pantalla completa*",
     "                   .   .",
     "                  .     ."
   ]
 ];
 
-// Ensure they all have exactly 5 lines
-// We pad them with spaces to match line width roughly (around 105 chars)
+const footerText = `
 
-let fieles = [];
-try {
-  fieles = fs.readFileSync(path.join(__dirname, 'fieles.txt'), 'utf8')
-    .split('\n')
-    .map(name => name.trim())
-    .filter(name => name.length > 0);
-} catch(e) {}
-const fielesText = fieles.join(' - ');
+             Lauri Reynoso - Santi Mazzei - Pedro Clementi - Bruno Mancilla - Santi Ávila -
+             Jose Malaman - Fede Sánchez - Santi Vera - Berni Llensa - Ignacio Funes - Bruno
+              Tinnirello - Agus Stevanato - Martín Cordoba - Tomás Cordoba - Manu Bellido -
+              Astor Laporte - Lambert Indeau - Martiniano Garelli - Matías Guevara - Santi
+             Moreno - Mateo Zalazar - Ignacio Angulo - Bauti Alcaya - Tomás Manzano - Matías
+             Fernández - Maxi Leitner - Chapa - Ignacio Morales - Alejo Fernández - Joaquín
+               Villarreal - Martín Clementi - Indalecio - Franco Marasco - Mauro Pereyra -
+            Jerónimo Pinea - liobarrozo - Máximo Bessone - Nahu Rodriguez - Lautaro Espada -
+             Luciano Burgos - Lucas Muñoz - Dylan Santoni - Leonel Funes - Valentín Murcia -
+                             Marcos Parrino - Bruno Sanchez - Ernesto Elias
 
-function wrapText(text, maxWidth) {
-  const words = text.split(' ');
-  const lines = [];
-  let currentLine = '';
-  for (const word of words) {
-    if ((currentLine + word).length > maxWidth) {
-      lines.push(currentLine.trim());
-      currentLine = word + ' ';
-    } else {
-      currentLine += word + ' ';
-    }
-  }
-  if (currentLine) lines.push(currentLine.trim());
-  return lines;
-}
-const fielesLines = wrapText(fielesText, 80).map(l => {
-  const pad = ' '.repeat(Math.max(0, Math.floor((105 - l.length) / 2)));
-  return pad + l;
-});
+                                      *Usar pantalla completa*   
+`.split('\\n');
 
 for (let i = 0; i < sparkles.length; i++) {
   let lines = sparkles[i];
@@ -93,11 +77,9 @@ for (let i = 0; i < sparkles.length; i++) {
     newFrame[j] = lines[j].padEnd(105, ' ');
   }
   
-  if (fielesLines.length > 0) {
-    newFrame.push('', '', ...fielesLines, '');
-  }
+  newFrame.push(...footerText);
 
-  fs.writeFileSync(path.join(__dirname, 'frames', `${i + 1}.txt`), newFrame.join('\n'));
+  fs.writeFileSync(path.join(__dirname, 'frames', `${i + 1}.txt`), newFrame.join('\\n'));
 }
 
 console.log("Frames generated!");
